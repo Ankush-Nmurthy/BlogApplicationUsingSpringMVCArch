@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>User Dashboard</title>
+	</head>
+
+	<body>
+		<h1>Welcome to Your Dashboard</h1>
+
+		<h2>Your Posts</h2>
+		<div id="blogList">
+			<c:forEach items="${userPosts}" var="post">
+				<div class="blog-post">
+					<h2>${post.title}</h2>
+					<img src="${post.imageAddress}" alt="Image Description">
+					<p>${post.content}</p>
+				</div>
+			</c:forEach>
+		</div>
+
+		<a href="/add-post">Add New Post</a>
+	</body>
+
+	</html>

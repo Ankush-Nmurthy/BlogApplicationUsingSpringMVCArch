@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>All Blogs</title>
+	</head>
+
+	<body>
+		<h1>All Blogs</h1>
+
+		<h2>Blogs</h2>
+		<div id="blogList">
+			<c:forEach items="${userPosts}" var="post">
+				<div class="blog-post">
+					<h2>${post.title}</h2>
+					<img src="${post.imageAddress}" alt="Image Description">
+					<p>${post.author.name}</p>
+					<p>${post.content}</p>
+				</div>
+			</c:forEach>
+		</div>
+
+		<a href="/add-post">Add New Post</a>
+	</body>
+
+	</html>
